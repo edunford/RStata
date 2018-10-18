@@ -2,3 +2,5 @@
 *.Rproj
 *.here
 /Test
+*.DS_Store
+*.Rhistory

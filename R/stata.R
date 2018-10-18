@@ -59,7 +59,7 @@ stata <- function(src = stop("At least 'src' must be specified"),
                   data_out = FALSE,
                   stata_path = getOption("RStata.StataPath", stop("You need to set up a Stata path; ?chooseStataBin")),
                   stata_version = getOption("RStata.StataVersion", stop("You need to specify your Stata version")),
-                  stata_echo = getOption("RStata.StataEcho", TRUE),
+                  stata_echo = FALSE,
                   text_out = FALSE,
                   ...
                   )
@@ -187,8 +187,10 @@ stata <- function(src = stop("At least 'src' must be specified"),
     close(con)
 
     ## execute Stata
+    cat('Running Stata code...\n')
     rdl <- pipe(stataCmd,open = "rt")
     close(rdl)
+    cat("Code Completed!\n")
 
     ## Compile log
     stataLog = readLines('RStata.log')
