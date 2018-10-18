@@ -5,8 +5,8 @@
 #'
 #' @name RStata
 #' @docType package
-#' 
-#' @importFrom foreign read.dta write.dta
+#'
+#' @importFrom haven read_dta write_dta
 #' @importFrom tools file_path_sans_ext
 #' @importFrom utils menu
 NULL
